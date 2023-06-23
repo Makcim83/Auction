@@ -1,0 +1,13 @@
+/target/
+/.idea/
+/.idea/.gitignore
+/.idea/compiler.xml
+/.idea/dataSources.local.xml
+/.idea/dataSources.xml
+/.idea/dbnavigator.xml
+/.idea/encodings.xml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/workspace.xml
+/.swagger-codegen/
+/.swagger-codegen/VERSION
