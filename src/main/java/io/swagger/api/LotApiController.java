@@ -53,12 +53,32 @@ public class LotApiController implements LotApi {
         this.request = request;
     }
 
-    public ResponseEntity<Void> createBid(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("id") Integer id,@Parameter(in = ParameterIn.DEFAULT, description = "Объект с именем ставившего на лот", required=true, schema=@Schema()) @Valid @RequestBody IdBidBody body) {
+    public ResponseEntity<Void> createBid(
+            @Parameter(
+                    in = ParameterIn.PATH,
+                    description = "",
+                    required = true,
+                    schema = @Schema()
+            ) @PathVariable("id") Integer id,
+            @Parameter(
+                    in = ParameterIn.DEFAULT,
+                    description = "Объект с именем ставившего на лот",
+                    required = true,
+                    schema = @Schema()
+            ) @Valid @RequestBody IdBidBody body
+    ) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Lot> createLot(@Parameter(in = ParameterIn.DEFAULT, description = "", required=true, schema=@Schema()) @Valid @RequestBody CreateLot body) {
+    public ResponseEntity<Lot> createLot(
+            @Parameter(
+                    in = ParameterIn.DEFAULT,
+                    description = "",
+                    required = true,
+                    schema = @Schema()
+            ) @Valid @RequestBody CreateLot body
+    ) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -72,9 +92,24 @@ public class LotApiController implements LotApi {
         return new ResponseEntity<Lot>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<List<Lot>> findLots(@Parameter(in = ParameterIn.QUERY, description = "" ,schema=@Schema(allowableValues={ "STARTED", "STOPPED", "CREATED" }
-)) @Valid @RequestParam(value = "status", required = false) String status,@Min(0)@Parameter(in = ParameterIn.QUERY, description = "" ,schema=@Schema(allowableValues={ "0" }
-)) @Valid @RequestParam(value = "page", required = false) Integer page) {
+    public ResponseEntity<List<Lot>> findLots(
+            @Parameter(
+                    in = ParameterIn.QUERY,
+                    description = "",
+                    schema = @Schema(allowableValues = {"STARTED", "STOPPED", "CREATED"})
+            ) @Valid @RequestParam(
+                    value = "status",
+                    required = false
+            ) String status,
+            @Min(0) @Parameter(
+                    in = ParameterIn.QUERY,
+                    description = "",
+                    schema = @Schema(allowableValues = {"0"})
+            ) @Valid @RequestParam(
+                    value = "page",
+                    required = false
+            ) Integer page
+    ) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -102,7 +137,14 @@ public class LotApiController implements LotApi {
         return new ResponseEntity<Resource>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Bid> getFirstBidder(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("id") Integer id) {
+    public ResponseEntity<Bid> getFirstBidder(
+            @Parameter(
+                    in = ParameterIn.PATH,
+                    description = "",
+                    required = true,
+                    schema = @Schema()
+            ) @PathVariable("id") Integer id
+    ) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -116,7 +158,14 @@ public class LotApiController implements LotApi {
         return new ResponseEntity<Bid>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<FullLot> getFullLot(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("id") Integer id) {
+    public ResponseEntity<FullLot> getFullLot(
+            @Parameter(
+                    in = ParameterIn.PATH,
+                    description = "",
+                    required = true,
+                    schema = @Schema()
+            ) @PathVariable("id") Integer id
+    ) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -130,7 +179,14 @@ public class LotApiController implements LotApi {
         return new ResponseEntity<FullLot>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Bid> getMostFrequentBidder(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("id") Integer id) {
+    public ResponseEntity<Bid> getMostFrequentBidder(
+            @Parameter(
+                    in = ParameterIn.PATH,
+                    description = "",
+                    required = true,
+                    schema = @Schema()
+            ) @PathVariable("id") Integer id
+    ) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -144,12 +200,26 @@ public class LotApiController implements LotApi {
         return new ResponseEntity<Bid>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Void> lotIdStartPost(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("id") Integer id) {
+    public ResponseEntity<Void> lotIdStartPost(
+            @Parameter(
+                    in = ParameterIn.PATH,
+                    description = "",
+                    required = true,
+                    schema = @Schema()
+            ) @PathVariable("id") Integer id
+    ) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Void> lotIdStopPost(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("id") Integer id) {
+    public ResponseEntity<Void> lotIdStopPost(
+            @Parameter(
+                    in = ParameterIn.PATH,
+                    description = "",
+                    required = true,
+                    schema = @Schema()
+            ) @PathVariable("id") Integer id
+    ) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
